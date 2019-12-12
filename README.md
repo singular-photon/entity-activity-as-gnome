@@ -8,6 +8,7 @@ Usecase :
 
 to translate entity behavior in an environment using following steps : reads -> contig -> scaffolding -> a long sequence of string [a chromosome]
 
+
 then based on upcoming activites to updatae final string and generate tendencies based on arrival of events 
 
 arriving events will be processed in real time and will be transmitted to timeline queues maintained in redis [toplogies will be written in clojure]
