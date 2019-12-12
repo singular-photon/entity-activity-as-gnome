@@ -25,7 +25,7 @@ q{i} = a json {"act1":[a,b,c...]} a,b,c can be +/- intigers
 constrains of the game :
 1. while an entity is consuming from a timeline q [tq] only 1/3rd more can do so from samae tq either a player can wait or consume from another tq
 2. a player (entiry) has to take the sum of numers in a tq and hold it till next consumption
-3. if timeline are arranged in [1,2,3,4,5] a player who consumed from ith tq can not consume form tq at index< i-x [order of q is cyclic] [x not decided , it's a factor that will add to tendency as one would like to achieve maximization by replicating a behavior which rewaded him before]
+3. if timeline are arranged in [1,2,3,4,5] a player who consumed from ith tq can not consume form tq at index< i-x & i+x[order of q is cyclic] [x not decided , it's a factor that will add to tendency as one would like to achieve maximization by replicating a behavior which rewaded him before]
 4. entity can chose to consume or to wait.
 5. if a players present reaches a negative threashold , his window for current consumption tq will decline i.e x becomes less.
 
