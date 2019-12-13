@@ -27,6 +27,9 @@ class Gnome:
 		for x in range(dely):
 			matrix = np.column_stack((matrix, [0] * (self.memory_depth+delx)))
 		return matrix
+	
+	def update_matrix(self,matrix,delx,dely,val):
+		return matrix[delx][dely] = val
 
 	@classmethod
 	def long_seq_str(cls,s):
@@ -44,18 +47,19 @@ a = g.instantiate_matrix()
 
 class Process:
 	
-	def __inti__(self,qname,per_gain,pos,w):
-		self.update_dim = Gnome()
+	def __inti__(self,qname,per_gain,pos,w,matrix):
+		self.update = Gnome()
 		self.qname = qname
 		self.per_gain = per_gain
 		self.position = pos
 		self.width = w
+		self.matrix = matrix
 
-	def update_matrix_dimentions(self,row,col):
-		return self.update_dim.update_matrix_dimentions(row,col)	
+	def update_matrix_dimentions(self,row,col,val):
+		return self.update.update_matrix(matrix,delx,dely,val)	
 
 
-	def run_this(self,qname,qstr,otpq):
+	def run_this(self,matrix,qname,qstr,otpq):
 		jstr = json.loads(qstr)
 		val = sum[x for x in jstr['list_val']]
 		if val>0:
@@ -63,11 +67,11 @@ class Process:
 		if val<0:
 			self.width -=1
 		
+		#update_matrix_dimentions(row,col,val):	
 		# update val in position in matrix and return a list of pos and width
+		# call back for if process want to wait do check 2d matrx
 
 			
-			
-	
 	def runner(self,qstr,out_queue):
 		t = threading.Thread(target=self.run_this,args=(self.qname,qstr,out_queue,))
 		t.start()
