@@ -1,4 +1,4 @@
-# entity-activity-as-gnome
+# entity-activity-as-memory
 a repo to hold tendency of an entity in a finite possible environment
 
 : language [python 3.6 and clojure]
